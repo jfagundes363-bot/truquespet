@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloco de Texto Decorado - Truques Para Cachorro</title>
+
+  <!-- ===================================================================
+       FONTES DO GOOGLE FONTS (Obrigatórias e bem grossas)
+       - Archivo Black (texto principal com peso 900)
+       - Poppins 700 (detalhes, selo e marcações)
+       =================================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===================================================================
+       RESET BÁSICO DE PÁGINA (Apenas para demonstração e segurança)
+       =================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    /* ===================================================================
+       TRECHO PARA COPIAR: BLOCO DE TEXTO DECORADO NEO-BRUTALISTA PET
+       =================================================================== */
+
+    /* PONTOS EDITÁVEIS (VARIÁVEIS CSS):
+       - --pet-cor-destaque: Amarelo do selo e marca-texto (#FFD400)
+       - --pet-cor-osso: Marrom-biscoito dos ossos (#C98B4A)
+       - --pet-cor-borda: Preto das bordas grossas (#000000)
+       - --pet-cor-fundo: Branco do card (#ffffff)
+    */
+    :root {
+      --pet-cor-destaque: #FFD400;
+      --pet-cor-osso: #C98B4A;
+      --pet-cor-borda: #000000;
+      --pet-cor-fundo: #ffffff;
+      --pet-espaco-vertical: clamp(32px, 8vw, 72px);
+    }
+
+    /* Container de isolamento do bloco */
+    .pet-banner-section {
+      width: 100%;
+      padding-top: var(--pet-espaco-vertical);
+      padding-bottom: var(--pet-espaco-vertical);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      overflow: visible;
+    }
+
+    /* Envoltório externo para posicionar o cachorrinho, selo e card */
+    .pet-card-wrapper {
+      position: relative;
+      box-sizing: border-box;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* 4. SELO AMARELO PEQUENO INCLINADO (-3deg) ACIMA DO CARD */
+    .pet-seal-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background-color: var(--pet-cor-destaque);
+      color: #000000;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(11px, 2.8vw, 13px);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 3.5px solid var(--pet-cor-borda);
+      border-radius: 999px;
+      box-shadow: 3px 3px 0 var(--pet-cor-borda);
+      transform: rotate(-3deg);
+      z-index: 10;
+      margin-bottom: -10px;
+      user-select: none;
+      -webkit-user-select: none;
+      pointer-events: none;
+      transition: transform 0.25s ease;
+    }
+
+    /* 2. CACHORRINHO ESPIANDO POR CIMA DA BORDA DO CARD */
+    .pet-peeking-dog {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -75%);
+      z-index: 5;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Card Principal com Borda Grossa e Sombra Dura */
+    .pet-text-card {
+      position: relative;
+      background-color: var(--pet-cor-fundo);
+      border: 4px solid var(--pet-cor-borda);
+      border-radius: 14px;
+      box-shadow: 5px 5px 0 var(--pet-cor-borda);
+      box-sizing: border-box;
+      z-index: 4;
+      text-align: center;
+      overflow: visible;
+
+      /* Animação inicial de entrada controlada por IntersectionObserver */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
+    }
+
+    /* Classe ativada ao entrar na tela */
+    .pet-text-card.pet-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* TEXTO PRINCIPAL */
+    .pet-main-heading {
+      font-family: 'Archivo Black', sans-serif;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      box-sizing: border-box;
+    }
+
+    /* 1. MARCA-TEXTO AMARELO (#FFD400) COM ÍCONE SVG INLINE (1em) */
+    .pet-highlight {
+      display: inline-block;
+      position: relative;
+      white-space: nowrap;
+      background-color: var(--pet-cor-destaque);
+      color: #000000;
+      padding: 0.05em 0.22em;
+      border-radius: 6px;
+      margin: 0 0.04em;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      border: 2px solid #000000;
+    }
+
+    /* Ícones SVG inline com 1em de altura */
+    .pet-inline-icon {
+      display: inline-block;
+      width: 0.95em;
+      height: 0.95em;
+      vertical-align: -0.1em;
+      margin-left: 0.14em;
+      fill: none;
+      stroke: #000000;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* 3. DOIS BISCOITOS EM FORMATO DE OSSO NOS CANTOS INFERIORES */
+    .pet-corner-bone {
+      position: absolute;
+      bottom: -10px;
+      z-index: 6;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+      filter: drop-shadow(2px 2px 0 #000000);
+      transition: transform 0.3s ease;
+    }
+
+    .pet-corner-bone.left {
+      left: -10px;
+      transform: rotate(-18deg);
+    }
+
+    .pet-corner-bone.right {
+      right: -10px;
+      transform: rotate(18deg);
+    }
+
+    /* ===================================================================
+       ANIMAÇÕES LEVES (Rabo, piscar de olhos e hover)
+       =================================================================== */
+
+    /* Rabinho balançando continuamente */
+    @keyframes pet-tail-wag {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(26deg);
+      }
+    }
+
+    .pet-anim-tail {
+      animation: pet-tail-wag 0.75s ease-in-out infinite;
+      transform-origin: 30px 58px;
+    }
+
+    /* Piscar natural dos olhos a cada ~4s */
+    @keyframes pet-eyes-blink {
+      0%, 92%, 100% {
+        transform: scaleY(1);
+      }
+      95% {
+        transform: scaleY(0.1);
+      }
+    }
+
+    .pet-anim-eyes {
+      animation: pet-eyes-blink 4.2s infinite;
+      transform-origin: 50px 38px;
+    }
+
+    /* Efeito sutil na língua */
+    @keyframes pet-tongue-pant {
+      0%, 100% {
+        transform: scaleY(1);
+      }
+      50% {
+        transform: scaleY(1.18);
+      }
+    }
+
+    .pet-anim-tongue {
+      animation: pet-tongue-pant 1.4s ease-in-out infinite;
+      transform-origin: 50px 52px;
+    }
+
+    /* HOVER NO COMPUTADOR: o card sobe 4px e o cachorrinho inclina a cabeça */
+    @media (hover: hover) and (pointer: fine) {
+      .pet-card-wrapper:hover .pet-text-card {
+        transform: translateY(-4px);
+        box-shadow: 5px 9px 0 var(--pet-cor-borda);
+      }
+
+      .pet-card-wrapper:hover .pet-peeking-dog {
+        transform: translate(-50%, -82%) rotate(4deg);
+      }
+
+      .pet-card-wrapper:hover .pet-seal-badge {
+        transform: rotate(-1deg) scale(1.05);
+      }
+
+      .pet-card-wrapper:hover .pet-corner-bone.left {
+        transform: rotate(-28deg) scale(1.08);
+      }
+
+      .pet-card-wrapper:hover .pet-corner-bone.right {
+        transform: rotate(28deg) scale(1.08);
+      }
+    }
+
+    /* ===================================================================
+       RESPONSIVIDADE (MOBILE FIRST - 3 PONTOS DE QUEBRA EXATOS)
+       =================================================================== */
+
+    /* -------------------------------------------------------------------
+       1. PONTO DE QUEBRA: CELULAR (até 599px)
+       - Card: 100% da largura com margem lateral de 16px (calc(100% - 32px))
+       - Texto: font-size clamp(24px, 7.4vw, 32px)
+       - Cachorrinho: 84px de largura
+       - Ossos: 40px de largura
+       - Padding interno: 28px 20px
+       ------------------------------------------------------------------- */
+    @media (max-width: 599px) {
+      .pet-card-wrapper {
+        width: calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+      }
+
+      .pet-text-card {
+        width: 100%;
+        padding: 28px 20px;
+      }
+
+      .pet-main-heading {
+        font-size: clamp(24px, 7.4vw, 32px);
+      }
+
+      .pet-peeking-dog {
+        width: 84px;
+        height: 68px;
+        transform: translate(-50%, -70%);
+      }
+
+      .pet-corner-bone {
+        width: 40px;
+        height: 24px;
+      }
+
+      .pet-corner-bone.left {
+        left: -8px;
+        bottom: -8px;
+      }
+
+      .pet-corner-bone.right {
+        right: -8px;
+        bottom: -8px;
+      }
+    }
+
+    /* -------------------------------------------------------------------
+       2. PONTO DE QUEBRA: TABLET (600px a 1023px)
+       - Card: centralizado com largura máxima de 600px
+       - Texto: 36px a 42px (clamp(36px, 4.6vw, 42px))
+       - Cachorrinho: 110px de largura
+       - Ossos: 52px de largura
+       - Padding interno: 40px 32px
+       ------------------------------------------------------------------- */
+    @media (min-width: 600px) and (max-width: 1023px) {
+      .pet-card-wrapper {
+        width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .pet-text-card {
+        width: 100%;
+        padding: 40px 32px;
+      }
+
+      .pet-main-heading {
+        font-size: clamp(36px, 4.6vw, 42px);
+      }
+
+      .pet-peeking-dog {
+        width: 110px;
+        height: 88px;
+        transform: translate(-50%, -74%);
+      }
+
+      .pet-corner-bone {
+        width: 52px;
+        height: 31px;
+      }
+
+      .pet-corner-bone.left {
+        left: -12px;
+        bottom: -10px;
+      }
+
+      .pet-corner-bone.right {
+        right: -12px;
+        bottom: -10px;
+      }
+    }
+
+    /* -------------------------------------------------------------------
+       3. PONTO DE QUEBRA: COMPUTADOR (1024px ou mais)
+       - Card: centralizado com largura máxima de 760px
+       - Texto: 44px a 52px (clamp(44px, 3.8vw, 52px))
+       - Cachorrinho: 130px de largura
+       - Ossos: 60px de largura
+       - Padding interno: 48px 44px
+       ------------------------------------------------------------------- */
+    @media (min-width: 1024px) {
+      .pet-card-wrapper {
+        width: 100%;
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .pet-text-card {
+        width: 100%;
+        padding: 48px 44px;
+      }
+
+      .pet-main-heading {
+        font-size: clamp(44px, 3.8vw, 52px);
+      }
+
+      .pet-peeking-dog {
+        width: 130px;
+        height: 104px;
+        transform: translate(-50%, -75%);
+      }
+
+      .pet-corner-bone {
+        width: 60px;
+        height: 36px;
+      }
+
+      .pet-corner-bone.left {
+        left: -14px;
+        bottom: -12px;
+      }
+
+      .pet-corner-bone.right {
+        right: -14px;
+        bottom: -12px;
+      }
+    }
+
+    /* ===================================================================
+       ACESSIBILIDADE: PREFERS-REDUCED-MOTION
+       (Desliga animações contínuas para usuários sensíveis a movimento)
+       =================================================================== */
+    @media (prefers-reduced-motion: reduce) {
+      .pet-text-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .pet-anim-tail,
+      .pet-anim-eyes,
+      .pet-anim-tongue {
+        animation: none !important;
+      }
+
+      .pet-card-wrapper:hover .pet-text-card,
+      .pet-card-wrapper:hover .pet-peeking-dog,
+      .pet-card-wrapper:hover .pet-seal-badge,
+      .pet-card-wrapper:hover .pet-corner-bone {
+        transform: none !important;
+        box-shadow: 5px 5px 0 var(--pet-cor-borda) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================================
+       INÍCIO DO BLOCO DE TEXTO DECORADO PET (COPIE A PARTIR DAQUI)
+       =================================================================== -->
+  <section class="pet-banner-section" aria-label="Destaque de truques para cachorro">
+    <div class="pet-card-wrapper">
+
+      <!-- 4. SELO AMARELO PEQUENO E INCLINADO (-3deg) COM BORDA PRETA -->
+      <div class="pet-seal-badge" aria-hidden="true">
+        <span>🐾</span>
+        <span>Truques Divertidos</span>
+      </div>
+
+      <!-- 2. UM CACHORRINHO EM SVG ESPIANDO POR CIMA DA BORDA DO CARD
+           - Desenhado do zero em estilo cartoon
+           - Contorno preto grosso (3px a 4px)
+           - Olhos grandes com speculares
+           - Língua rosada de fora
+           - Rabinho balançando (pet-anim-tail)
+           - Patinhas apoiadas na borda do card
+           - Pisca de vez em quando (pet-anim-eyes)
+      -->
+      <div class="pet-peeking-dog" aria-hidden="true">
+        <svg viewBox="0 0 100 80" width="100%" height="100%" style="overflow: visible;">
+          <defs>
+            <!-- Sombra interna suave das orelhas -->
+            <clipPath id="dogHeadClip">
+              <circle cx="50" cy="40" r="26" />
+            </clipPath>
+          </defs>
+
+          <!-- Rabinho alegre balançando por trás -->
+          <g class="pet-anim-tail">
+            <path d="M 30,58 C 18,54 10,40 14,28 C 16,22 24,24 25,32 C 26,40 24,50 30,58 Z"
+                  fill="#E59A3D" stroke="#000000" stroke-width="3" stroke-linejoin="round" />
+            <circle cx="16" cy="27" r="3.5" fill="#FFFFFF" />
+          </g>
+
+          <!-- Orelha Esquerda Caidinha -->
+          <path d="M 28,26 C 14,26 8,44 14,60 C 17,68 25,66 28,54 C 30,46 31,34 28,26 Z"
+                fill="#B86B22" stroke="#000000" stroke-width="3.5" stroke-linejoin="round" />
+
+          <!-- Orelha Direita Caidinha -->
+          <path d="M 72,26 C 86,26 92,44 86,60 C 83,68 75,66 72,54 C 70,46 69,34 72,26 Z"
+                fill="#B86B22" stroke="#000000" stroke-width="3.5" stroke-linejoin="round" />
+
+          <!-- Cabeça do cachorrinho (pelagem caramelo #F5A842) -->
+          <circle cx="50" cy="40" r="26" fill="#F5A842" stroke="#000000" stroke-width="3.5" />
+
+          <!-- Focinho arredondado claro -->
+          <ellipse cx="50" cy="46" rx="17" ry="12" fill="#FFF2DC" stroke="#000000" stroke-width="2.5" />
+
+          <!-- Bochechas rosadas fofas -->
+          <ellipse cx="38" cy="45" rx="3.5" ry="2.5" fill="#FFB4B4" opacity="0.6" />
+          <ellipse cx="62" cy="45" rx="3.5" ry="2.5" fill="#FFB4B4" opacity="0.6" />
+
+          <!-- Olhos Grandes com Animação de Piscar -->
+          <g class="pet-anim-eyes">
+            <!-- Olho Esquerdo -->
+            <ellipse cx="40" cy="33" rx="5.5" ry="6.5" fill="#000000" />
+            <circle cx="38" cy="31" r="2" fill="#FFFFFF" />
+            <circle cx="41.5" cy="35" r="0.9" fill="#FFFFFF" />
+
+            <!-- Olho Direito -->
+            <ellipse cx="60" cy="33" rx="5.5" ry="6.5" fill="#000000" />
+            <circle cx="58" cy="31" r="2" fill="#FFFFFF" />
+            <circle cx="61.5" cy="35" r="0.9" fill="#FFFFFF" />
+          </g>
+
+          <!-- Sobrancelhas pequenas -->
+          <ellipse cx="40" cy="24" rx="2.5" ry="1.2" fill="#8B4513" />
+          <ellipse cx="60" cy="24" rx="2.5" ry="1.2" fill="#8B4513" />
+
+          <!-- Nariz Preto com Brilho Specular -->
+          <path d="M 46,41 C 46,38 54,38 54,41 C 54,45 50,47 50,47 C 50,47 46,45 46,41 Z"
+                fill="#000000" />
+          <circle cx="48.5" cy="40.5" r="1" fill="#FFFFFF" />
+
+          <!-- Boca e Língua Rosada de Fora -->
+          <path d="M 45,47 Q 50,51 55,47" fill="none" stroke="#000000" stroke-width="2.2" stroke-linecap="round" />
+          <!-- Língua animada -->
+          <g class="pet-anim-tongue">
+            <path d="M 47,49 C 47,56 53,56 53,49 Z" fill="#FF6B8B" stroke="#000000" stroke-width="1.8" />
+            <line x1="50" y1="49" x2="50" y2="53" stroke="#000000" stroke-width="1.2" />
+          </g>
+
+          <!-- Patinha Esquerda apoiada na borda do card -->
+          <g>
+            <rect x="27" y="60" width="13" height="15" rx="6.5" fill="#FFF2DC" stroke="#000000" stroke-width="2.5" />
+            <line x1="31.5" y1="67" x2="31.5" y2="72" stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
+            <line x1="35.5" y1="67" x2="35.5" y2="72" stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
+          </g>
+
+          <!-- Patinha Direita apoiada na borda do card -->
+          <g>
+            <rect x="60" y="60" width="13" height="15" rx="6.5" fill="#FFF2DC" stroke="#000000" stroke-width="2.5" />
+            <line x1="64.5" y1="67" x2="64.5" y2="72" stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
+            <line x1="68.5" y1="67" x2="68.5" y2="72" stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- CARD PRINCIPAL DE TEXTO -->
+      <div class="pet-text-card" id="petTextCard">
+
+        <!-- 3. DOIS BISCOITOS EM FORMATO DE OSSO NOS CANTOS INFERIORES
+             - Cor marrom-biscoito (#C98B4A)
+             - Contorno preto grosso (2.5px)
+             - Levemente inclinados
+        -->
+        <!-- Osso Inferior Esquerdo -->
+        <div class="pet-corner-bone left" aria-hidden="true">
+          <svg viewBox="0 0 50 30" width="100%" height="100%">
+            <!-- Formato de osso biscoito de cachorro -->
+            <path d="M 12,9 C 12,4 5,4 5,9 C 5,12 8,13 8,15 C 8,17 5,18 5,21 C 5,26 12,26 12,21 L 38,21 C 38,26 45,26 45,21 C 45,18 42,17 42,15 C 42,13 45,12 45,9 C 45,4 38,4 38,9 Z"
+                  fill="#C98B4A" stroke="#000000" stroke-width="2.8" stroke-linejoin="round" />
+            <!-- Detalhes de buraquinhos do biscoito assado -->
+            <circle cx="18" cy="15" r="1.3" fill="#8A5620" />
+            <circle cx="25" cy="15" r="1.3" fill="#8A5620" />
+            <circle cx="32" cy="15" r="1.3" fill="#8A5620" />
+          </svg>
+        </div>
+
+        <!-- Osso Inferior Direito -->
+        <div class="pet-corner-bone right" aria-hidden="true">
+          <svg viewBox="0 0 50 30" width="100%" height="100%">
+            <!-- Formato de osso biscoito de cachorro -->
+            <path d="M 12,9 C 12,4 5,4 5,9 C 5,12 8,13 8,15 C 8,17 5,18 5,21 C 5,26 12,26 12,21 L 38,21 C 38,26 45,26 45,21 C 45,18 42,17 42,15 C 42,13 45,12 45,9 C 45,4 38,4 38,9 Z"
+                  fill="#C98B4A" stroke="#000000" stroke-width="2.8" stroke-linejoin="round" />
+            <!-- Detalhes de buraquinhos do biscoito assado -->
+            <circle cx="18" cy="15" r="1.3" fill="#8A5620" />
+            <circle cx="25" cy="15" r="1.3" fill="#8A5620" />
+            <circle cx="32" cy="15" r="1.3" fill="#8A5620" />
+          </svg>
+        </div>
+
+        <!-- ===============================================================
+             TEXTO PRINCIPAL EXATO COM MARCA-TEXTO E ÍCONES SVG INLINE
+             "Faça seu cachorro sentar, dar a pata e rolar, e se divirta no processo"
+             =============================================================== -->
+        <h2 class="pet-main-heading">
+          Faça seu cachorro
+          <!-- Destaque 1: "sentar" + ícone cachorrinho sentado -->
+          <span class="pet-highlight">
+            sentar
+            <svg class="pet-inline-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <!-- Cachorrinho sentado: corpo, cabeça, orelha e pata -->
+              <path d="M10 5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+              <path d="M7.5 3.5c-.8.8-1.5 2-1.5 3.5 0 2 1.5 3.5 1.5 3.5" />
+              <path d="M12 5c1 1 2 2.5 2 4.5 0 3-1.5 5.5-3 8.5" />
+              <path d="M7 12c-1.5 2-2 4.5-2 7 0 1.5 1 2.5 2.5 2.5h8c1.5 0 2.5-1 2.5-2.5 0-3-2-5-4-5" />
+              <path d="M18 19c2 0 3.5-1 4-3" />
+            </svg></span>,
+          <!-- Destaque 2: "dar a pata" + ícone patinha -->
+          <span class="pet-highlight">
+            dar a pata
+            <svg class="pet-inline-icon" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width: 2.2;">
+              <!-- Almofada principal -->
+              <path d="M12 11c-2.8 0-5 2-5 4.5 0 2 1.8 3.5 5 3.5s5-1.5 5-3.5c0-2.5-2.2-4.5-5-4.5z" />
+              <!-- Dedinhos da pata -->
+              <circle cx="6.5" cy="8.5" r="1.7" />
+              <circle cx="10.2" cy="5.8" r="1.7" />
+              <circle cx="13.8" cy="5.8" r="1.7" />
+              <circle cx="17.5" cy="8.5" r="1.7" />
+            </svg></span>
+          e
+          <!-- Destaque 3: "rolar" + ícone seta circular -->
+          <span class="pet-highlight">
+            rolar
+            <svg class="pet-inline-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <!-- Seta circular indicando giro/rolamento -->
+              <path d="M21 12a9 9 0 1 1-3.2-6.9L21 8" />
+              <polyline points="21 3 21 8 16 8" />
+            </svg></span>,
+          e se divirta no processo
+        </h2>
+
+      </div><!-- /.pet-text-card -->
+
+    </div><!-- /.pet-card-wrapper -->
+  </section>
+  <!-- ===================================================================
+       FIM DO BLOCO DE TEXTO DECORADO PET (FIM DO TRECHO DE CÓPIA)
+       =================================================================== -->
+
+  <!-- ===================================================================
+       JAVASCRIPT PURO (ZERO LIBS EXTERNAS)
+       - IntersectionObserver para entrada suave do card e cachorrinho
+       - Desativação em navegadores sem suporte ou com prefers-reduced-motion
+       =================================================================== -->
+  <script>
+    (function initPetDecoratedCard() {
+      const card = document.getElementById('petTextCard');
+      if (!card) return;
+
+      // Verifica se o usuário prefere movimento reduzido
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        // Exibição imediata sem transição para acessibilidade
+        card.classList.add('pet-visible');
+        return;
+      }
+
+      // Observador de interseção para revelar suavemente quando o card entrar no viewport
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            card.classList.add('pet-visible');
+            obs.unobserve(entry.target); // Executa apenas uma vez
+          }
+        });
+      }, {
+        threshold: 0.15, // Dispara quando 15% do elemento estiver visível
+        rootMargin: '0px 0px -40px 0px' // Margem suave para disparo natural
+      });
+
+      observer.observe(card);
+    })();
+  </script>
+
+</body>
+</html>

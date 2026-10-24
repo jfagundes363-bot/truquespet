@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+  }
+  h1, h2, h3, .font-heading {
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+.brutal-card {
+  background: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 5px 5px 0 #000000;
+  border-radius: 12px;
+}
+
+.brutal-card-highlight {
+  background: #FFF7CC;
+  border: 5px solid #000000;
+  box-shadow: 6px 6px 0 #000000;
+  border-radius: 12px;
+}
+
+.brutal-btn {
+  border: 4px solid #000000;
+  box-shadow: 5px 5px 0 #000000;
+  border-radius: 12px;
+  font-family: 'Archivo Black', sans-serif;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brutal-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+.brutal-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 #000000;
+}
+
+.pulse-soft {
+  animation: pulse-scale 3s infinite ease-in-out;
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Animações Pet & Cachorrinho */
+@keyframes wag-tail {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes ear-left {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-6deg);
+  }
+}
+
+@keyframes ear-right {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes dog-blink {
+  0%, 92%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes tongue {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.22);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(6deg);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(-8deg);
+  }
+}
+
+.animate-wag-tail {
+  animation: wag-tail 0.8s infinite ease-in-out;
+}
+
+.animate-ear-left {
+  animation: ear-left 2.6s infinite ease-in-out;
+}
+
+.animate-ear-right {
+  animation: ear-right 2.6s infinite ease-in-out 0.25s;
+}
+
+.animate-dog-blink {
+  animation: dog-blink 3.8s infinite;
+  transform-origin: center;
+}
+
+.animate-tongue {
+  animation: tongue 1.6s infinite ease-in-out;
+  transform-origin: top center;
+}
+
+.animate-float-slow {
+  animation: float-slow 4.2s infinite ease-in-out;
+}
+
+@keyframes gentle-sway {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2.5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2.5deg);
+  }
+}
+
+.animate-gentle-sway {
+  animation: gentle-sway 4s ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 42s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 42s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left,
+.animate-marquee-right {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-soft {
+    animation: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

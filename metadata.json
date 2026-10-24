@@ -1,0 +1,6 @@
+{
+  "name": "Página de Vendas - Truques para Cachorro",
+  "description": "Landing page neo-brutalista mobile-first para infoproduto de truques para cães com seções de conversão, pop-up de downsell e garantia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

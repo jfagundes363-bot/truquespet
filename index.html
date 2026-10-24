@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Página de Vendas - Como Ensinar Truques Para Seu Cachorro</title>
+    <meta name="description" content="Aprenda a ensinar truques incríveis para seu cachorro em poucos minutos por dia, com reforço positivo e sem complicação." />
+    <meta property="og:title" content="Como Ensinar Truques Para Seu Cachorro | Tutorial Passo a Passo" />
+    <meta property="og:description" content="Tutorial simples, direto e sem equipamento caro para donos iniciantes ensinarem truques incríveis." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐶</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      /* Proteção contra extensões de navegador que tentam sobrescrever window.fetch em propriedades com apenas getter */
+      try {
+        let _currentFetch = window.fetch ? window.fetch.bind(window) : undefined;
+        Object.defineProperty(window, 'fetch', {
+          configurable: true,
+          enumerable: true,
+          get() {
+            return _currentFetch;
+          },
+          set(newFetch) {
+            _currentFetch = newFetch;
+          }
+        });
+      } catch (err) {
+        /* Silencioso caso já esteja definido ou restrito */
+      }
+
+      /* Evita que erros originados em chrome-extension:// quebrem a aplicação */
+      window.addEventListener('error', function(event) {
+        if (event && (event.filename?.includes('chrome-extension://') || event.message?.includes('Cannot set property fetch'))) {
+          event.stopImmediatePropagation?.();
+          event.preventDefault?.();
+          return true;
+        }
+      }, true);
+    </script>
+  </head>
+  <body class="bg-white text-black antialiased selection:bg-[#FFD400] selection:text-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
