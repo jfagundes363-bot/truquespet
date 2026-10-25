@@ -158,8 +158,11 @@ export const TricksGridSection: React.FC = () => {
                   <img
                     src={trick.image}
                     alt={trick.title}
+                    width={290}
+                    height={516}
                     className="w-full h-full object-cover select-none"
                     loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <div className="w-full h-full bg-black" />
@@ -182,8 +185,11 @@ export const TricksGridSection: React.FC = () => {
               <img
                 src="https://i.imgur.com/0jDuTfR.png"
                 alt="Diversos truques"
+                width={290}
+                height={516}
                 className="w-full h-full object-cover select-none"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

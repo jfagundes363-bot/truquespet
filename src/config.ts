@@ -6,29 +6,35 @@
 export interface ProductConfig {
   nomeProduto: string;
   subtitulo: string;
-  linkBasico: string;          // checkout do plano básico, R$ 10,00
-  linkCompleto1490: string;    // checkout do completo com desconto no pop-up, R$ 14,90
-  linkCompleto1999: string;    // checkout do plano completo principal, R$ 19,99
+  linkBasico: string;          // checkout do plano básico, R$ 9,90 (52PZV5S)
+  linkCompleto: string;        // checkout do plano completo, R$ 19,90 (JV1NI9B)
+  linkCompleto1999: string;    // compatibilidade
+  linkPopUp1990: string;       // checkout R$ 19,90 (JV1NI9B)
+  linkPopUp1490: string;       // checkout R$ 14,90 pop-up
+  linkCompleto1490: string;    // compatibilidade
   emailSuporte: string;
   anoRodape: number;
-  precoOriginal: string;       // Preço de ancoragem (ex: "49,90")
-  precoBasico: string;         // "10,00"
-  precoCompleto: string;       // "19,99"
+  precoOriginal: string;       // Preço de ancoragem (ex: "47,90")
+  precoBasico: string;         // "9,90"
+  precoCompleto: string;       // "19,90"
   precoPopup: string;          // "14,90"
 }
 
 export const DEFAULT_CONFIG: ProductConfig = {
   nomeProduto: "Manual dos Truques Caninos",
   subtitulo: "Um tutorial leve e simples para fortalecer a conexão com seu pet, com treinos para que ela aprenda truques divertidos",
-  // LINKS DE CHECKOUT - SUBSTITUA PELAS SUAS URLs DA HOTMART, KIWIFY, EDUZZ, BRAIP, ETC.
-  linkBasico: "https://pay.exemplo.com/plano-basico-10",
-  linkCompleto1490: "https://pay.exemplo.com/plano-completo-desconto-1490",
-  linkCompleto1999: "https://pay.exemplo.com/plano-completo-1999",
-  emailSuporte: "suporte@manualdostruques.com.br",
+  // LINKS REAIS DE CHECKOUT WIVEN
+  linkBasico: "https://checkout.wiven.com.br/checkout/cmvo3vzm73uto01pxpf89nc6k?offer=52PZV5S",
+  linkCompleto: "https://checkout.wiven.com.br/checkout/cmvo3vzm73uto01pxpf89nc6k?offer=JV1NI9B",
+  linkCompleto1999: "https://checkout.wiven.com.br/checkout/cmvo3vzm73uto01pxpf89nc6k?offer=JV1NI9B",
+  linkPopUp1990: "https://checkout.wiven.com.br/checkout/cmvo3vzm73uto01pxpf89nc6k?offer=JV1NI9B",
+  linkPopUp1490: "https://checkout.wiven.com.br/checkout/cmvo3vzm73uto01pxpf89nc6k?offer=DMW913B",
+  linkCompleto1490: "https://checkout.wiven.com.br/checkout/cmvo3vzm73uto01pxpf89nc6k?offer=DMW913B",
+  emailSuporte: "adsfagundiz@gmail.com",
   anoRodape: 2026,
-  precoOriginal: "49,90",
+  precoOriginal: "47,90",
   precoBasico: "9,90",
-  precoCompleto: "29,90",
+  precoCompleto: "19,90",
   precoPopup: "14,90",
 };
 

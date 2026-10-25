@@ -32,15 +32,43 @@ export function generateSingleFileHtml(config: ProductConfig): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFD400">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
   <title>${config.nomeProduto} | Como Ensinar Truques Para Seu Cachorro</title>
   <meta name="description" content="Aprenda a ensinar truques incríveis para seu cachorro em poucos minutos por dia com reforço positivo, sem enrolação e sem equipamento caro.">
   <meta property="og:title" content="${config.nomeProduto} | Tutorial Passo a Passo">
   <meta property="og:description" content="O método simples de reforço positivo para ensinar qualquer cachorro sem estresse.">
+  <meta property="og:image" content="https://i.imgur.com/wOZEwRI.png">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${config.nomeProduto} | Tutorial Passo a Passo">
+  <meta name="twitter:description" content="O método simples de reforço positivo para ensinar qualquer cachorro sem estresse.">
+  <meta name="twitter:image" content="https://i.imgur.com/wOZEwRI.png">
 
-  <!-- GOOGLE FONTS OBRIGATÓRIAS (Archivo Black e Poppins) -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1134795859236597');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <!-- DNS PREFETCH & PRECONNECT (Alta Velocidade) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://i.imgur.com" crossorigin>
+  <link rel="dns-prefetch" href="https://i.imgur.com">
+  <link rel="preconnect" href="https://checkout.wiven.com.br" crossorigin>
+  <link rel="dns-prefetch" href="https://checkout.wiven.com.br">
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
@@ -915,6 +943,11 @@ export function generateSingleFileHtml(config: ProductConfig): string {
   </style>
 </head>
 <body>
+  <!-- Meta Pixel noscript fallback -->
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1134795859236597&ev=PageView&noscript=1"
+    alt=""
+  /></noscript>
 
   <main class="container">
 
@@ -933,19 +966,19 @@ export function generateSingleFileHtml(config: ProductConfig): string {
         />
       </div>
 
-      <h1 style="font-size: clamp(20px, 4.5vw, 28px); margin-bottom: 20px; line-height: 1.35; max-width: 680px; margin-left: auto; margin-right: auto; padding: 0 8px;">
+      <h1 style="font-size: clamp(20px, 4.5vw, 28px); margin-top: 4px; margin-bottom: 14px; line-height: 1.25; max-width: 640px; margin-left: auto; margin-right: auto; padding: 0 8px; text-wrap: balance;">
         Já pensou em ensinar seu parceiro a 
-        <mark class="highlight" style="display: inline-block; padding: 2px 10px; border-radius: 8px; vertical-align: baseline; margin: 3px 0;">
+        <mark class="highlight" style="display: inline-block; padding: 2px 8px; border-radius: 8px; vertical-align: baseline; margin: 2px 0;">
           sentar, dar a pata e rolar
         </mark> 
         de maneira divertida?
       </h1>
 
       <!-- TEXTO DE APOIO ACIMA DO CELULAR -->
-      <div style="text-align: center; margin-bottom: 16px; padding: 0 12px;">
-        <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 19px; color: #000; margin-bottom: 0; display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap;">
+      <div style="text-align: center; margin-top: 4px; margin-bottom: 12px; padding: 0 12px;">
+        <h3 style="font-family: 'Archivo Black', sans-serif; font-size: clamp(16px, 4vw, 19px); color: #000; margin-bottom: 0; display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; line-height: 1.25;">
           <span>Assista o vídeo e veja como</span>
-          <svg style="width: 20px; height: 20px; display: inline-block; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <svg style="width: 18px; height: 18px; display: inline-block; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <polyline points="19 12 12 19 5 12"></polyline>
           </svg>
@@ -953,34 +986,34 @@ export function generateSingleFileHtml(config: ProductConfig): string {
       </div>
 
       <!-- ========================================================
-           MOLDURA DO CELULAR (PROPORÇÃO 9:19.5, CLAMP 260px-360px, MAX-HEIGHT 80dvh)
+           MOLDURA DO CELULAR (PROPORÇÃO 9:16 PERFEITA)
            ======================================================== -->
       <div style="width: 100%; display: flex; justify-content: center; margin-bottom: 16px; padding: 0 10px;">
-        <div style="position: relative; width: 100%; max-width: clamp(260px, 82vw, 360px); aspect-ratio: 9/19.5; max-height: 80dvh; user-select: none;">
+        <div style="position: relative; width: 100%; max-width: clamp(260px, 80vw, 340px); aspect-ratio: 9/16; user-select: none;">
           <!-- Botões Laterais Físicos -->
           <div style="position: absolute; left: -3.5px; top: 18%; width: 4px; height: 26px; background: #2c2c2e; border-radius: 2px 0 0 2px;"></div>
           <div style="position: absolute; left: -3.5px; top: 26%; width: 4px; height: 46px; background: #2c2c2e; border-radius: 2px 0 0 2px;"></div>
           <div style="position: absolute; left: -3.5px; top: 35%; width: 4px; height: 46px; background: #2c2c2e; border-radius: 2px 0 0 2px;"></div>
           <div style="position: absolute; right: -3.5px; top: 28%; width: 4px; height: 64px; background: #2c2c2e; border-radius: 0 2px 2px 0;"></div>
 
-          <!-- Chassi Grafite com Brilho Metálico e Cantos 48px -->
-          <div style="position: relative; width: 100%; height: 100%; background: #1b1b1e; border-radius: 48px; padding: 11px; box-shadow: 0 28px 60px -15px rgba(0,0,0,0.6), 0 12px 28px -10px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.12), 0 0 0 4px #09090b; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
+          <!-- Chassi Grafite com Brilho Metálico e Cantos 38px -->
+          <div style="position: relative; width: 100%; height: 100%; background: #1b1b1e; border-radius: 38px; padding: 8px; box-shadow: 0 22px 45px -12px rgba(0,0,0,0.6), 0 10px 20px -8px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.12), 0 0 0 4px #09090b; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
             
-            <!-- Tela Interna com Vídeo Real, Capa Inicial e Botão YouTube -->
-            <div id="phone-screen" style="position: relative; width: 100%; height: 100%; background: #000000; border-radius: 38px; overflow: hidden; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+            <!-- Tela Interna com Vídeo Real 9:16, Capa Inicial e Botão YouTube -->
+            <div id="phone-screen" style="position: relative; width: 100%; height: 100%; background: #000000; border-radius: 30px; overflow: hidden; display: flex; align-items: center; justify-content: center; cursor: pointer;">
               <video
                 id="hero-main-video"
                 src="https://i.imgur.com/L5uhYXn.mp4"
                 poster="https://i.imgur.com/L5uhYXn.jpg"
                 playsinline
                 preload="metadata"
-                style="width: 100%; height: 100%; object-fit: cover; display: block;"
+                style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 9/16; display: block;"
               ></video>
 
               <!-- Botão YouTube Play -->
               <div id="youtube-play-btn" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); z-index: 20;">
-                <button type="button" aria-label="Reproduzir vídeo" style="width: 74px; height: 50px; border-radius: 16px; background: #FF0000; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.6); cursor: pointer;">
-                  <svg style="width: 26px; height: 26px; fill: #ffffff; transform: translateX(2px);" viewBox="0 0 24 24">
+                <button type="button" aria-label="Reproduzir vídeo" style="width: 70px; height: 48px; border-radius: 14px; background: #FF0000; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.6); cursor: pointer;">
+                  <svg style="width: 24px; height: 24px; fill: #ffffff; transform: translateX(2px);" viewBox="0 0 24 24">
                     <polygon points="6,4 20,12 6,20" fill="#ffffff" />
                   </svg>
                 </button>
@@ -998,23 +1031,23 @@ export function generateSingleFileHtml(config: ProductConfig): string {
       </div>
 
       <!-- ====================================================================
-           MINI SEÇÃO DE SUBHEADLINE (ORGANIZADA E SEM ÍCONES)
+           MINI SEÇÃO DE SUBHEADLINE (ORGANIZADA E COMPACTA)
            ==================================================================== -->
-      <div class="subhead-section">
-        <div id="subhead-card-el" class="subhead-card" style="padding: 44px 24px; text-align: center; border: none; box-shadow: none;">
+      <div class="subhead-section" style="margin: 12px auto 24px auto;">
+        <div id="subhead-card-el" class="subhead-card" style="padding: 16px 14px; text-align: center; border: none; box-shadow: none;">
           <!-- LINHA 1 (POPPINS 700) -->
-          <p class="subhead-line-1" style="color: #000; letter-spacing: -0.01em; margin-bottom: 32px; line-height: 1.35;">
+          <p class="subhead-line-1" style="color: #000; letter-spacing: -0.01em; margin-bottom: 8px; line-height: 1.3; font-size: clamp(16px, 3.8vw, 22px);">
             Um jeito simples de fortalecer a 
-            <span style="background: var(--amarelo); color: #000; padding: 2px 10px; border: 2px solid #000; border-radius: 6px; display: inline-block; box-shadow: 2px 2px 0 #000; transform: rotate(-1deg); vertical-align: baseline;">
+            <span style="background: var(--amarelo); color: #000; padding: 2px 8px; border: 2px solid #000; border-radius: 6px; display: inline-block; box-shadow: 2px 2px 0 #000; transform: rotate(-1deg); vertical-align: baseline;">
               conexão
             </span> 
             com seu pet
           </p>
 
           <!-- LINHA 2 (ARCHIVO BLACK) -->
-          <p class="subhead-line-2" style="color: #000; letter-spacing: -0.02em; margin: 0; line-height: 1.25;">
+          <p class="subhead-line-2" style="color: #000; letter-spacing: -0.02em; margin: 0; line-height: 1.2; font-size: clamp(21px, 5.5vw, 36px);">
             Ensine ele 
-            <span style="background: var(--amarelo); color: #000; padding: 2px 14px; border: 2.5px solid #000; border-radius: 8px; display: inline-block; box-shadow: 3px 3px 0 #000; transform: rotate(1deg); vertical-align: baseline;">
+            <span style="background: var(--amarelo); color: #000; padding: 2px 10px; border: 2px solid #000; border-radius: 8px; display: inline-block; box-shadow: 2.5px 2.5px 0 #000; transform: rotate(1deg); vertical-align: baseline;">
               truques divertidos
             </span>!
           </p>
@@ -1230,21 +1263,21 @@ export function generateSingleFileHtml(config: ProductConfig): string {
 
       <div style="position: relative; width: 100%; max-width: 820px; margin: 0 auto;">
         <!-- Botão Anterior (Seta Preta) -->
-        <button type="button" id="btn-testimonials-prev" aria-label="Relato anterior" style="position: absolute; left: 6px; top: 50%; transform: translateY(-50%); z-index: 40; width: 48px; height: 48px; border-radius: 50%; background: var(--amarelo); border: 2.5px solid #000; color: #000; display: flex; align-items: center; justify-content: center; box-shadow: 3px 3px 0 #000; cursor: pointer; touch-action: manipulation;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px; color: #000;" aria-hidden="true">
+        <button type="button" id="btn-testimonials-prev" aria-label="Relato anterior" style="position: absolute; left: 2px; top: 50%; transform: translateY(-50%); z-index: 40; width: 44px; height: 44px; border-radius: 50%; background: var(--amarelo); border: 2.5px solid #000; color: #000; display: flex; align-items: center; justify-content: center; box-shadow: 2.5px 2.5px 0 #000; cursor: pointer; touch-action: manipulation;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: #000;" aria-hidden="true">
             <path d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
         <!-- Botão Próximo (Seta Preta) -->
-        <button type="button" id="btn-testimonials-next" aria-label="Próximo relato" style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); z-index: 40; width: 48px; height: 48px; border-radius: 50%; background: var(--amarelo); border: 2.5px solid #000; color: #000; display: flex; align-items: center; justify-content: center; box-shadow: 3px 3px 0 #000; cursor: pointer; touch-action: manipulation;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px; color: #000;" aria-hidden="true">
+        <button type="button" id="btn-testimonials-next" aria-label="Próximo relato" style="position: absolute; right: 2px; top: 50%; transform: translateY(-50%); z-index: 40; width: 44px; height: 44px; border-radius: 50%; background: var(--amarelo); border: 2.5px solid #000; color: #000; display: flex; align-items: center; justify-content: center; box-shadow: 2.5px 2.5px 0 #000; cursor: pointer; touch-action: manipulation;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; color: #000;" aria-hidden="true">
             <path d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
         <!-- Pista do Carrossel de Relatos (Proporção nativa de cada imagem: 1024x1536 e 941x1672) -->
-        <div id="testimonials-carousel-track" style="display: flex; gap: 20px; overflow-x: hidden; touch-action: pan-y; scroll-behavior: smooth; padding: 12px 56px 24px 56px; scrollbar-width: none; height: 520px; align-items: center;">
+        <div id="testimonials-carousel-track" style="display: flex; gap: 14px; overflow-x: hidden; touch-action: pan-y; scroll-behavior: smooth; padding: 10px 24px 20px 24px; scrollbar-width: none; height: clamp(380px, 60vh, 520px); align-items: center;">
           ${[
             { url: 'https://i.imgur.com/qMhpn5r.png', ratio: '1024 / 1536' },
             { url: 'https://i.imgur.com/z7pYJ0J.png', ratio: '1024 / 1536' },
@@ -1326,53 +1359,86 @@ export function generateSingleFileHtml(config: ProductConfig): string {
          9. BÔNUS ESPECIAIS (PLANO COMPLETO)
          ======================================================== -->
     <section id="bonus">
-      <h2 class="section-title">Bônus Exclusivos Gratuitos</h2>
-      <p class="section-sub">Levando hoje o plano completo, você recebe esses 3 presentes sem pagar nada a mais:</p>
+      <!-- LINK DO INSTAGRAM / AVALIAÇÃO ACIMA DO TÍTULO DE BÔNUS -->
+      <div style="max-width: 540px; margin: 0 auto 32px auto; padding: 0 16px;">
+        <a
+          href="https://www.instagram.com/omanual_do_pet/#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir perfil no Instagram @omanual_do_pet e enviar feedback"
+          style="display: block; padding: 10px 14px; background: linear-gradient(to right, #fffbeb, #fdf2f8, #faf5ff); border-radius: 16px; border: 2px solid #000; box-shadow: 3px 3px 0 #000; text-decoration: none; color: inherit; cursor: pointer;"
+        >
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <!-- ÍCONE DO INSTAGRAM AJUSTADO -->
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 2px 2px 0 #000; border: 2px solid #000;">
+              <svg style="width: 20px; height: 20px; color: #fff;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </div>
+            <!-- TEXTOS RESUMIDOS E DIRETOS -->
+            <div style="text-align: left; flex: 1; min-width: 0;">
+              <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                <span style="font-family: 'Archivo Black', sans-serif; font-size: 13px; color: #000; line-height: 1.2;">
+                  @omanual_do_pet
+                </span>
+                <span style="background: #fce7f3; color: #be185d; border: 1px solid #f472b6; font-size: 9px; font-weight: 800; padding: 1px 6px; border-radius: 9999px; text-transform: uppercase;">
+                  Feedback
+                </span>
+              </div>
+              <p style="font-size: 11px; color: #3f3f46; font-weight: 500; line-height: 1.25; margin: 2px 0 0 0;">
+                Envie seu feedback no Insta e nos conte o que achou do material!
+              </p>
+            </div>
+            <!-- BOTÃO OTIMIZADO PARA MOBILE -->
+            <div style="flex-shrink: 0; display: flex; align-items: center; gap: 4px; background: #e1306c; color: #fff; font-family: 'Archivo Black', sans-serif; font-size: 11px; padding: 6px 10px; border-radius: 10px; border: 2px solid #000; box-shadow: 2px 2px 0 #000;">
+              <span>CLIQUE AQUI</span>
+              <span style="font-size: 12px;">👆</span>
+            </div>
+          </div>
+        </a>
+      </div>
 
-      <div style="max-width: 360px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px;">
-        <!-- BÔNUS 1 -->
-        <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-          <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 18px; color: #000; margin-bottom: 8px; text-align: center;">
-            Guia de Petiscos
-          </h3>
-          <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; border: 2px solid #000; box-shadow: 4px 4px 0 #000; background: #fff;">
-            <img
-              src="https://i.imgur.com/Vasvgzb.png"
-              alt="Guia de Petiscos"
-              style="width: 100%; height: auto; display: block;"
-              loading="lazy"
-            />
+      <h2 class="section-title">Bônus Exclusivos de Lançamento</h2>
+      <p class="section-sub">Garantindo sua vaga no <strong>Plano Completo</strong> hoje, você leva estes 3 presentes de graça:</p>
+
+      <div style="max-width: 540px; margin: 0 auto; padding: 0 16px;">
+        <!-- TÍTULOS ORGANIZADOS EM CIMA DA IMAGEM -->
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #fff; border: 2px solid #000; border-radius: 12px; box-shadow: 3px 3px 0 #000;">
+            <span style="background: #fbbf24; color: #000; font-family: 'Archivo Black', sans-serif; font-size: 11px; padding: 3px 8px; border-radius: 4px; border: 1px solid #000; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0;">BÔNUS #1</span>
+            <div>
+              <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 14px; color: #000; margin: 0; line-height: 1.2;">Guia de Petiscos Caseiros</h3>
+              <p style="font-size: 11px; color: #52525b; margin: 2px 0 0 0; font-weight: 500;">Saudáveis, baratos e irresistíveis</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #fff; border: 2px solid #000; border-radius: 12px; box-shadow: 3px 3px 0 #000;">
+            <span style="background: #38bdf8; color: #000; font-family: 'Archivo Black', sans-serif; font-size: 11px; padding: 3px 8px; border-radius: 4px; border: 1px solid #000; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0;">BÔNUS #2</span>
+            <div>
+              <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 14px; color: #000; margin: 0; line-height: 1.2;">Checklist da Rotina de Treino</h3>
+              <p style="font-size: 11px; color: #52525b; margin: 2px 0 0 0; font-weight: 500;">Disciplina diária em apenas 10 minutos</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #fff; border: 2px solid #000; border-radius: 12px; box-shadow: 3px 3px 0 #000;">
+            <span style="background: #34d399; color: #000; font-family: 'Archivo Black', sans-serif; font-size: 11px; padding: 3px 8px; border-radius: 4px; border: 1px solid #000; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0;">BÔNUS #3</span>
+            <div>
+              <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 14px; color: #000; margin: 0; line-height: 1.2;">Como Parar o Cão de Pular em Visitas</h3>
+              <p style="font-size: 11px; color: #52525b; margin: 2px 0 0 0; font-weight: 500;">Técnica simples para visitas tranquilas</p>
+            </div>
           </div>
         </div>
 
-        <!-- BÔNUS 2 -->
-        <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-          <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 18px; color: #000; margin-bottom: 8px; text-align: center;">
-            Checklist da Rotina
-          </h3>
-          <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; border: 2px solid #000; box-shadow: 4px 4px 0 #000; background: #fff;">
-            <img
-              src="https://i.imgur.com/a8zMKNU.png"
-              alt="Checklist da Rotina"
-              style="width: 100%; height: auto; display: block;"
-              loading="lazy"
-            />
-          </div>
-        </div>
-
-        <!-- BÔNUS 3 -->
-        <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-          <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 18px; color: #000; margin-bottom: 8px; text-align: center;">
-            Mini Guia de Como Fazer Ele Parar de Pular nas Visitas
-          </h3>
-          <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; border: 2px solid #000; box-shadow: 4px 4px 0 #000; background: #fff;">
-            <img
-              src="https://i.imgur.com/OvS9T9F.png"
-              alt="Mini Guia de Como Fazer Ele Parar de Pular nas Visitas"
-              style="width: 100%; height: auto; display: block;"
-              loading="lazy"
-            />
-          </div>
+        <!-- IMAGEM DOS BÔNUS COM QUALIDADE ORIGINAL -->
+        <div style="position: relative; width: 100%; border-radius: 16px; overflow: hidden; border: 2px solid #000; box-shadow: 6px 6px 0 #000; background: #fff;">
+          <img
+            src="https://i.imgur.com/QZVmSL8.png"
+            alt="3 Bônus Incríveis Gratuitos - Guia de Petiscos, Checklist e Como Parar de Pular"
+            style="width: 100%; height: auto; display: block;"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
@@ -1383,40 +1449,173 @@ export function generateSingleFileHtml(config: ProductConfig): string {
     <section id="planos">
       <h2 class="section-title" style="margin-bottom: 24px;">O que você prefere receber?</h2>
 
-      <!-- CARD 1: PLANO COMPLETO (PRIMEIRO E EM DESTAQUE COM IMAGEM WTs1wub, SEM BORDA SELECIONADA) -->
-      <div class="card-highlight" style="margin-bottom: 32px; text-align: center; padding: 20px 16px; border: none; box-shadow: none;">
-        <div class="badge-rotative">⭐ MAIS ESCOLHIDO</div>
-        
-        <!-- ESTRUTURA DO CARD COM IMAGEM OFICIAL (SEM BORDA) -->
-        <div style="position: relative; width: 100%; max-width: 480px; margin: 0 auto; border-radius: 12px; overflow: hidden; border: none; box-shadow: none;">
-          <img
-            src="https://i.imgur.com/RtjD992.png"
-            alt="Plano Completo 29,90 - Benefícios e Bônus"
-            style="width: 100%; height: auto; display: block;"
-            loading="lazy"
-          />
+      <div style="display: flex; flex-direction: column; gap: 32px; max-width: 520px; margin: 0 auto; padding: 0 12px;">
+        <!-- CARD 1: ACESSO COMPLETO + BÔNUS (MAIS ESCOLHIDO) -->
+        <div style="position: relative; padding: 24px 20px; background: #FFF7CC; border-radius: 16px; border: 3px solid #000; box-shadow: 6px 6px 0 #000; text-align: left;">
+          <!-- Selo rotacionado -->
+          <div style="position: absolute; top: -14px; right: 16px; background: #FFD400; color: #000; border: 2px solid #000; padding: 4px 12px; border-radius: 6px; font-family: 'Archivo Black', sans-serif; font-size: 12px; letter-spacing: 0.05em; box-shadow: 3px 3px 0 #000; transform: rotate(2deg); z-index: 20;">
+            ⭐ MAIS ESCOLHIDO
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <span style="display: inline-block; background: #22C55E; color: #000; border: 2px solid #000; font-size: 11px; font-weight: 900; padding: 2px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">
+              Recomendado
+            </span>
+            <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 24px; color: #000; line-height: 1.2; text-transform: uppercase; margin: 0 0 6px 0;">
+              ACESSO COMPLETO + BÔNUS
+            </h3>
+            <p style="color: #3f3f46; font-size: 14px; font-weight: 500; margin: 0;">
+              Tudo o que você precisa para o seu cão se tornar o orgulho de toda a família.
+            </p>
+          </div>
+
+          <!-- IMAGEM DO PLANO COMPLETO: BANNER OFICIAL COM TODOS OS 15 TRUQUES + BÔNUS -->
+          <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; border: 2px solid #000; box-shadow: 4px 4px 0 #000; margin-bottom: 20px; background: #fff;">
+            <img
+              src="https://i.imgur.com/wOZEwRI.png"
+              alt="Plano Completo - Acesso Completo + Bônus por R$ 19,90"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; user-select: none;"
+              loading="lazy"
+            />
+          </div>
+          <!-- O QUE ESTÁ INCLUSO -->
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-family: 'Archivo Black', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: #000; margin: 0 0 12px 0;">
+              O que está incluso:
+            </h4>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px;">
+                <span style="font-size: 16px; line-height: 1;">✅</span>
+                <div>
+                  <strong style="color: #000; display: block;">Todos os truques básicos</strong>
+                  <span style="font-size: 12px; color: #52525b;">(Sentar, Deitar, Dar a Pata, Ficar)</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px;">
+                <span style="font-size: 16px; line-height: 1;">✅</span>
+                <div>
+                  <strong style="color: #000; display: block;">Truques avançados</strong>
+                  <span style="font-size: 12px; color: #52525b;">(Rolar, Fingir de Morto, Buscar e outros)</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px;">
+                <span style="font-size: 16px; line-height: 1;">✅</span>
+                <div>
+                  <strong style="color: #000; display: block;">Todos os 3 Super Bônus</strong>
+                  <span style="font-size: 12px; color: #047857; font-weight: 700;">Inclusos gratuitamente</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px;">
+                <span style="font-size: 16px; line-height: 1;">✅</span>
+                <div>
+                  <strong style="color: #000; display: block;">Acesso vitalício</strong>
+                  <span style="font-size: 12px; color: #52525b;">Para sempre</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px;">
+                <span style="font-size: 16px; line-height: 1;">✅</span>
+                <div>
+                  <strong style="color: #000; display: block;">Atualizações e novos truques futuros</strong>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px;">
+                <span style="font-size: 16px; line-height: 1;">✅</span>
+                <div>
+                  <strong style="color: #000; display: block;">Suporte por e-mail</strong>
+                  <span style="font-size: 12px; color: #52525b;">Para tirar dúvidas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-green pulse" id="btn-comprar-completo" style="width: 100%; font-size: 18px; padding: 16px 20px;">
+            QUERO O PLANO COMPLETO
+          </button>
         </div>
 
-        <a href="${config.linkCompleto1999}" class="btn btn-green pulse" id="btn-comprar-completo" style="max-width: 480px; margin-top: 24px;">
-          QUERO O PLANO COMPLETO
-        </a>
-      </div>
+        <!-- CARD 2: PLANO BÁSICO -->
+        <div style="position: relative; padding: 24px 20px; background: #FFFFFF; border-radius: 16px; border: 3px solid #000; box-shadow: 6px 6px 0 #000; text-align: left;">
+          <!-- IMAGEM DO PLANO BÁSICO ACIMA DO TEXTO -->
+          <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; border: 2px solid #000; box-shadow: 4px 4px 0 #000; margin-bottom: 20px; background: #fff;">
+            <img
+              src="https://i.imgur.com/Ru5fh6G.png"
+              alt="Plano Básico R$ 9,90"
+              style="width: 100%; height: 100%; object-fit: cover; display: block; user-select: none;"
+              loading="lazy"
+            />
+          </div>
 
-      <!-- CARD 2: PLANO BÁSICO COM IMAGEM (FORMATO 1 POR 1) -->
-      <div style="margin-bottom: 24px; text-align: center; padding: 20px 16px;">
-        <div style="position: relative; width: 100%; max-width: 480px; aspect-ratio: 1 / 1; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 4px solid #000; box-shadow: 6px 6px 0 #000; background: #fff;">
-          <img
-            src="https://i.imgur.com/S9HAAI2.png"
-            alt="Plano Básico R$ 9,90"
-            style="width: 100%; height: 100%; object-fit: cover; display: block;"
-            loading="lazy"
-          />
+          <div style="margin-bottom: 16px;">
+            <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 24px; color: #000; line-height: 1.2; text-transform: uppercase; margin: 0 0 6px 0;">
+              PLANO BÁSICO
+            </h3>
+            <p style="color: #3f3f46; font-size: 14px; font-weight: 500; margin: 0;">
+              Apenas para quem quer ensinar comandos bem simples do dia a dia.
+            </p>
+          </div>
+
+          <!-- O QUE ESTÁ INCLUSO -->
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-family: 'Archivo Black', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: #000; margin: 0 0 12px 0;">
+              O que está incluso:
+            </h4>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px;">
+                <span style="font-size: 16px; line-height: 1;">✅</span>
+                <div>
+                  <strong style="color: #000;">Truques básicos:</strong>
+                  <span style="color: #52525b;"> (Sentar, Deitar, Ficar)</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #71717a;">
+                <span style="font-size: 16px; line-height: 1;">❌</span>
+                <div>
+                  Truques avançados: <span style="color: #a1a1aa;">(Rolar, Fingir de Morto)</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #71717a;">
+                <span style="font-size: 16px; line-height: 1;">❌</span>
+                <div>
+                  Bônus exclusivos: <span style="color: #a1a1aa;">(Petiscos e rotinas)</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #71717a;">
+                <span style="font-size: 16px; line-height: 1;">❌</span>
+                <div>
+                  Atualizações futuras
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PREÇO -->
+          <div style="background: #f4f4f5; border: 2px solid #000; border-radius: 12px; padding: 14px; margin-bottom: 20px; text-align: center; box-shadow: 3px 3px 0 #000;">
+            <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: #71717a; display: block; margin-bottom: 2px;">
+              Preço
+            </span>
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'Archivo Black', sans-serif; font-size: 32px; color: #000; line-height: 1;">
+                R$ 9,90
+              </span>
+            </div>
+            <p style="font-size: 11px; color: #52525b; font-weight: 600; margin: 6px 0 0 0;">
+              Pagamento único • Sem mensalidades
+            </p>
+          </div>
+
+          <!-- BOTÃO BÁSICO: ACIONA O POP-UP DE DOWNSELL -->
+          <button type="button" class="btn btn-white" id="btn-comprar-basico" style="width: 100%; font-size: 18px; padding: 16px 20px;">
+            QUERO SÓ O BÁSICO
+          </button>
         </div>
-
-        <!-- BOTÃO BÁSICO: ACIONA O POP-UP DE DOWNSELL -->
-        <button type="button" class="btn btn-white" id="btn-comprar-basico" style="max-width: 480px; margin-top: 24px;">
-          QUERO SÓ O BÁSICO
-        </button>
       </div>
     </section>
 
@@ -1522,54 +1721,109 @@ export function generateSingleFileHtml(config: ProductConfig): string {
   </main>
 
   <!-- ========================================================
-       POP-UP DE OFERTA EXCLUSIVA (DOWNSELL R$ 14,90)
+       1. MINI CARD MODAL: PLANO BÁSICO (R$ 9,90 + UPGRADE R$ 19,90)
        ======================================================== -->
-  <div class="modal-overlay" id="modal-downsell" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
-    <div class="modal-box">
-      <!-- BOTÃO DE FECHAR 'X' (48px de área de toque) -->
-      <button class="modal-close-btn" id="modal-close-x" aria-label="Fechar pop-up">&times;</button>
+  <div class="modal-overlay" id="modal-mini-basico" role="dialog" aria-modal="true" aria-labelledby="modal-basico-title" tabindex="-1">
+    <div class="modal-box" style="max-width: 480px;">
+      <button class="modal-close-btn" id="close-mini-basico" aria-label="Fechar pop-up">&times;</button>
       
-      <!-- FAIXA AMARELA NO TOPO -->
-      <div class="modal-banner">
-        ⚠️ ESPERA! ANTES DE SAIR...
+      <div class="modal-banner" style="background: #FFD400; color: #000; text-align: center; padding: 12px 18px;">
+        <span style="font-size: 11px; font-weight: 900; background: #000; color: #FFD400; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin: 0 auto 4px auto; display: inline-block;">Você Selecionou</span>
+        <h3 id="modal-basico-title" style="font-family: 'Archivo Black', sans-serif; font-size: 20px; color: #000; margin: 0; line-height: 1.2; text-align: center;">
+          PLANO BÁSICO • R$ 9,90
+        </h3>
       </div>
 
-      <div class="modal-body">
-        <h3 id="modal-title" class="modal-title font-heading">
-          Leve o PLANO COMPLETO por apenas R$ ${config.precoPopup}
-        </h3>
-
-        <p class="modal-sub">
-          Você escolheu o básico por R$ ${config.precoBasico}. Por apenas <strong>R$ 5,00 a mais</strong>, você leva os truques avançados, todos os 3 bônus e o acesso vitalício!
-        </p>
-
-        <!-- PREÇO ANCORADO -->
-        <div style="margin-bottom: 16px;">
-          <span style="color: var(--vermelho); text-decoration: line-through; font-size: 18px; font-weight: 800;">De R$ ${config.precoCompleto}</span>
-          <div style="font-family: 'Archivo Black', sans-serif; font-size: 44px; line-height: 1; color: #000; margin-top: 4px;">
-            R$ ${config.precoPopup}
-          </div>
-        </div>
-
-        <!-- LISTA DE BENEFÍCIOS ADICIONAIS -->
-        <div class="modal-checks">
-          <div>✅ Todos os Truques Avançados (Rolar, Morto, Buscar)</div>
-          <div>✅ Os 3 Bônus Exclusivos inclusos gratuitamente</div>
-          <div>✅ Acesso Vitalício sem mensalidade</div>
-        </div>
-
-        <!-- BOTÃO PRINCIPAL VERDE DO MODAL -->
-        <a href="${config.linkCompleto1490}" class="btn btn-green pulse" id="btn-modal-aceitar">
-          SIM, QUERO O COMPLETO POR R$ ${config.precoPopup}
+      <div class="modal-body" style="padding: 20px; text-align: center;">
+        <!-- BOTÃO DE PAGAMENTO DO BÁSICO -->
+        <a href="${config.linkBasico}" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; background: #18181b; color: #fff; font-size: 17px; margin-bottom: 20px; text-align: center; justify-content: center;">
+          FAZER PAGAMENTO (R$ 9,90) &rarr;
         </a>
 
-        <!-- LINK SECUNDÁRIO PARA IR PARA O BÁSICO -->
-        <div>
-          <a href="${config.linkBasico}" class="modal-secondary-link" id="link-modal-recusar">
-            Não, obrigado, quero só o básico por R$ ${config.precoBasico}
+        <!-- CARD DE APROVEITAR O PLANO COMPLETO (ABA SELECIONADA: IMAGEM DO PLANO COMPLETO + BOTÃO ABAIXO) -->
+        <div style="background: #FFF7CC; border: 3px solid #000; border-radius: 12px; padding: 14px; box-shadow: 4px 4px 0 #000; text-align: center;">
+          <div style="display: inline-block; background: #22C55E; color: #000; border: 2px solid #000; font-size: 11px; font-weight: 900; padding: 2px 10px; border-radius: 9999px; text-transform: uppercase; margin: 0 auto 10px auto;">
+            ✨ OPORTUNIDADE: PLANO COMPLETO POR R$ 19,90
+          </div>
+
+          <!-- IMAGEM DO PLANO COMPLETO -->
+          <div style="width: 100%; border-radius: 10px; overflow: hidden; border: 2px solid #000; box-shadow: 3px 3px 0 #000; background: #fff; margin-bottom: 12px;">
+            <img
+              src="https://i.imgur.com/wOZEwRI.png"
+              onerror="this.onerror=null;this.src='images/popup_oferta_1990.png';"
+              alt="Plano Completo por R$ 19,90"
+              style="width: 100%; height: auto; display: block;"
+            />
+          </div>
+
+          <!-- BOTÃO ABAIXO DA IMAGEM -->
+          <a href="${config.linkCompleto}" target="_blank" rel="noopener noreferrer" class="btn btn-green pulse" style="width: 100%; font-size: 16px; padding: 14px 16px; text-align: center; justify-content: center;">
+            QUERO O PLANO COMPLETO (R$ 19,90) &rarr;
           </a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       2. MINI CARD MODAL: PLANO COMPLETO (R$ 19,90)
+       ======================================================== -->
+  <div class="modal-overlay" id="modal-mini-completo" role="dialog" aria-modal="true" aria-labelledby="modal-completo-title" tabindex="-1">
+    <div class="modal-box" style="max-width: 480px;">
+      <button class="modal-close-btn" id="close-mini-completo" aria-label="Fechar pop-up">&times;</button>
+      
+      <div class="modal-banner" style="background: #22C55E; color: #000; text-align: center; padding: 12px 18px;">
+        <span style="font-size: 11px; font-weight: 900; background: #000; color: #22C55E; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin: 0 auto 4px auto; display: inline-block;">⭐ Mais Escolhido</span>
+        <h3 id="modal-completo-title" style="font-family: 'Archivo Black', sans-serif; font-size: 20px; color: #000; margin: 0; line-height: 1.2; text-align: center;">
+          ACESSO COMPLETO + BÔNUS
+        </h3>
+      </div>
+
+      <div class="modal-body" style="padding: 20px; text-align: center;">
+        <div style="background: #FFF7CC; border: 2px solid #000; border-radius: 12px; padding: 14px; margin-bottom: 16px; box-shadow: 3px 3px 0 #000; text-align: center;">
+          <p style="font-size: 11px; font-weight: 700; color: #52525b; text-transform: uppercase; margin: 0 0 2px 0; text-align: center;">Valor Promocional</p>
+          <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px;">
+            <span style="font-size: 14px; color: #a1a1aa; text-decoration: line-through; font-weight: 700;">De R$ 47,90</span>
+            <span style="font-family: 'Archivo Black', sans-serif; font-size: 30px; color: #15803d; line-height: 1;">R$ 19,90</span>
+            <span style="font-size: 12px; color: #52525b; font-weight: 600;">(Pagamento único)</span>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; color: #18181b; margin-bottom: 20px; text-align: center; align-items: center;">
+          <div>✅ Todos os Truques Básicos e Avançados</div>
+          <div>✅ Os 3 Super Bônus Exclusivos de Lançamento</div>
+          <div>✅ Acesso Vitalício Para Sempre</div>
+          <div>✅ Suporte por e-mail e atualizações futuras</div>
+        </div>
+
+        <a href="${config.linkCompleto}" target="_blank" rel="noopener noreferrer" class="btn btn-green pulse" style="width: 100%; font-size: 18px; padding: 16px 20px; text-align: center; justify-content: center;">
+          FAZER PAGAMENTO (R$ 19,90) &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       3. POP-UP DE LEVAR TUDO POR 14,90 (AO CLICAR NO 'X')
+       ======================================================== -->
+  <div class="modal-overlay" id="modal-downsell-1990" role="dialog" aria-modal="true" aria-label="Oferta Especial R$ 14,90" tabindex="-1">
+    <div class="modal-box" style="max-width: 460px; padding: 18px 16px; text-align: center;">
+      <button class="modal-close-btn" id="close-downsell-1990" aria-label="Fechar pop-up">&times;</button>
+
+      <!-- IMAGEM DA OFERTA (R$ 14,90) -->
+      <div style="width: 100%; border-radius: 12px; overflow: hidden; border: 3px solid #000; box-shadow: 4px 4px 0 #000; background: #fff; margin: 4px 0 16px 0;">
+        <img
+          src="https://i.imgur.com/1rcFHEj.png"
+          onerror="this.onerror=null;this.src='images/popup_oferta_1490.png';"
+          alt="Oferta Especial - Tudo por R$ 14,90"
+          style="width: 100%; height: auto; display: block;"
+        />
+      </div>
+
+      <!-- APENAS O BOTÃO DE ADQUIRIR E IR PARA O CHECKOUT -->
+      <a href="${config.linkPopUp1490 || config.linkPopUp1990}" target="_blank" rel="noopener noreferrer" class="btn btn-green pulse" style="width: 100%; font-size: 17px; padding: 16px 18px; text-align: center; justify-content: center;">
+        ADQUIRIR E IR PARA O CHECKOUT &rarr;
+      </a>
     </div>
   </div>
 
@@ -1725,10 +1979,18 @@ export function generateSingleFileHtml(config: ProductConfig): string {
     });
 
     const btnBasico = document.getElementById('btn-comprar-basico');
-    const modalDownsell = document.getElementById('modal-downsell');
-    const modalCloseX = document.getElementById('modal-close-x');
-    const btnModalAceitar = document.getElementById('btn-modal-aceitar');
-    const linkModalRecusar = document.getElementById('link-modal-recusar');
+    const btnCompleto = document.getElementById('btn-comprar-completo');
+
+    const modalMiniBasico = document.getElementById('modal-mini-basico');
+    const closeMiniBasico = document.getElementById('close-mini-basico');
+
+    const modalMiniCompleto = document.getElementById('modal-mini-completo');
+    const closeMiniCompleto = document.getElementById('close-mini-completo');
+
+    const modalDownsell1990 = document.getElementById('modal-downsell-1990');
+    const closeDownsell1990 = document.getElementById('close-downsell-1990');
+    const btnRecusarDownsell = document.getElementById('btn-recusar-downsell');
+
     const stickyBar = document.getElementById('sticky-bar');
     const sectionPlanos = document.getElementById('planos');
 
@@ -1763,51 +2025,94 @@ export function generateSingleFileHtml(config: ProductConfig): string {
       });
     });
 
-    // 2. CONTROLE DO MODAL DE OFERTA (DOWNSELL / UPSELL)
-    let lastActiveElement = null;
-
-    function openModal() {
-      lastActiveElement = document.activeElement;
-      modalDownsell.classList.add('active');
+    // 2. CONTROLE DOS MINI CARDS E POP-UP DE R$ 19,90
+    function openMiniBasico() {
+      modalMiniBasico.classList.add('active');
       document.body.style.overflow = 'hidden';
-      // Foco acessível no botão de ação principal do modal
-      if (btnModalAceitar) {
-        btnModalAceitar.focus();
-      }
     }
 
-    function closeModal() {
-      modalDownsell.classList.remove('active');
+    function openMiniCompleto() {
+      modalMiniCompleto.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function openDownsell1990() {
+      if (modalMiniBasico) modalMiniBasico.classList.remove('active');
+      if (modalMiniCompleto) modalMiniCompleto.classList.remove('active');
+      modalDownsell1990.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAllModals() {
+      if (modalMiniBasico) modalMiniBasico.classList.remove('active');
+      if (modalMiniCompleto) modalMiniCompleto.classList.remove('active');
+      if (modalDownsell1990) modalDownsell1990.classList.remove('active');
       document.body.style.overflow = '';
-      if (lastActiveElement) {
-        lastActiveElement.focus();
-      }
     }
 
-    // Clique em "QUERO SÓ O BÁSICO" abre o modal ao invés do checkout direto
+    // Clique em "QUERO SÓ O BÁSICO" -> Abre Mini Card Básico
     if (btnBasico) {
       btnBasico.addEventListener('click', (e) => {
         e.preventDefault();
-        openModal();
+        openMiniBasico();
       });
     }
 
-    // Fechar pelo botão X
-    if (modalCloseX) {
-      modalCloseX.addEventListener('click', closeModal);
+    // Clique em "QUERO O PLANO COMPLETO" -> Abre Mini Card Completo
+    if (btnCompleto) {
+      btnCompleto.addEventListener('click', (e) => {
+        e.preventDefault();
+        openMiniCompleto();
+      });
     }
 
-    // Fechar ao clicar fora (backdrop escuro)
-    modalDownsell.addEventListener('click', (e) => {
-      if (e.target === modalDownsell) {
-        closeModal();
+    // Se clicar no 'X' do Mini Card BÁSICO -> Abre Pop-up de 19,90
+    if (closeMiniBasico) {
+      closeMiniBasico.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDownsell1990();
+      });
+    }
+
+    // Se clicar no 'X' do Mini Card COMPLETO -> Abre Pop-up de 19,90
+    if (closeMiniCompleto) {
+      closeMiniCompleto.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDownsell1990();
+      });
+    }
+
+    // Fechar pop-up de 19,90 pelo 'X' ou link recusar
+    if (closeDownsell1990) {
+      closeDownsell1990.addEventListener('click', closeAllModals);
+    }
+    if (btnRecusarDownsell) {
+      btnRecusarDownsell.addEventListener('click', closeAllModals);
+    }
+
+    // Fechar ao clicar fora (backdrop)
+    [modalMiniBasico, modalMiniCompleto, modalDownsell1990].forEach(modal => {
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            if (modal === modalMiniBasico || modal === modalMiniCompleto) {
+              openDownsell1990();
+            } else {
+              closeAllModals();
+            }
+          }
+        });
       }
     });
 
     // Fechar com a tecla ESC
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modalDownsell.classList.contains('active')) {
-        closeModal();
+      if (e.key === 'Escape') {
+        if (modalMiniBasico?.classList.contains('active') || modalMiniCompleto?.classList.contains('active')) {
+          openDownsell1990();
+        } else if (modalDownsell1990?.classList.contains('active')) {
+          closeAllModals();
+        }
       }
     });
 

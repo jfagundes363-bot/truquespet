@@ -15,8 +15,11 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = () => {
             (e.currentTarget as HTMLImageElement).src = '/images/garantia.png';
           }}
           alt="Garantia Incondicional de 7 Dias"
+          width={420}
+          height={420}
           className="w-full max-w-[360px] sm:max-w-[420px] aspect-square object-contain select-none transition-transform duration-300 hover:scale-105"
           loading="lazy"
+          decoding="async"
         />
       </div>
     </section>

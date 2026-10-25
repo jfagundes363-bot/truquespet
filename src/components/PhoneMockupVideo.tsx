@@ -80,21 +80,21 @@ export const PhoneMockupVideo: React.FC<PhoneMockupVideoProps> = ({
   };
 
   return (
-    <div className="w-full flex flex-col items-center my-6 select-none">
+    <div className="w-full flex flex-col items-center mt-1 mb-5 sm:mt-2 sm:mb-7 select-none px-2">
       {/* TEXTO DE APOIO ACIMA DO CELULAR */}
-      <div className="text-center mb-4 px-3 max-w-[360px]">
-        <h3 className="font-heading text-lg sm:text-xl text-black leading-tight mb-0 flex items-center justify-center gap-1.5 flex-wrap">
+      <div className="text-center mb-2.5 sm:mb-3 px-2 max-w-[360px]">
+        <h3 className="font-heading text-base sm:text-lg md:text-xl text-black leading-snug mb-0 flex items-center justify-center gap-1.5 flex-wrap">
           <span>Assista o vídeo e veja como</span>
-          <ArrowDown className="w-5 h-5 text-black animate-bounce inline-block" strokeWidth={3} />
+          <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 text-black animate-bounce inline-block shrink-0" strokeWidth={3} />
         </h3>
       </div>
 
       {/* ========================================================
-          MOLDURA DO CELULAR (PROPORÇÃO 9:19.5, CLAMP 260px-360px)
+          MOLDURA DO CELULAR (PROPORÇÃO 9:16 PERFEITA)
           ======================================================== */}
       <div
         ref={phoneContainerRef}
-        className="relative w-full max-w-[clamp(260px,82vw,360px)] aspect-[9/19.5] max-h-[80dvh] flex items-center justify-center"
+        className="relative w-full max-w-[clamp(260px,80vw,340px)] aspect-[9/16] flex items-center justify-center mx-auto"
       >
         {/* BOTÕES LATERAIS DE HARDWARE EM CSS */}
         <div className="absolute -left-[3.5px] top-[18%] w-[4px] h-[26px] bg-gradient-to-r from-zinc-700 to-zinc-900 rounded-l-[2px] shadow-xs" />
@@ -102,8 +102,8 @@ export const PhoneMockupVideo: React.FC<PhoneMockupVideoProps> = ({
         <div className="absolute -left-[3.5px] top-[35%] w-[4px] h-[46px] bg-gradient-to-r from-zinc-700 to-zinc-900 rounded-l-[2px] shadow-xs" />
         <div className="absolute -right-[3.5px] top-[28%] w-[4px] h-[64px] bg-gradient-to-l from-zinc-700 to-zinc-900 rounded-r-[2px] shadow-xs" />
 
-        {/* CORPO DO APARELHO (Moldura Grafite com Brilho Metálico e Cantos 48px) */}
-        <div className="relative w-full h-full bg-[#1b1b1e] rounded-[48px] p-[10px] sm:p-[12px] shadow-[0_28px_60px_-15px_rgba(0,0,0,0.6),0_12px_28px_-10px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.12),0_0_0_4px_#09090b] flex flex-col justify-between overflow-hidden">
+        {/* CORPO DO APARELHO (Moldura Grafite com Brilho Metálico e Cantos 38px-42px) */}
+        <div className="relative w-full h-full bg-[#1b1b1e] rounded-[38px] sm:rounded-[42px] p-[8px] sm:p-[10px] shadow-[0_22px_45px_-12px_rgba(0,0,0,0.6),0_10px_20px_-8px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.12),0_0_0_4px_#09090b] flex flex-col justify-between overflow-hidden">
           {/* Reflexo metálico suave */}
           <div className="absolute -top-12 -left-12 w-48 h-48 bg-gradient-to-br from-white/15 to-transparent rounded-full pointer-events-none blur-sm" />
 
@@ -119,9 +119,9 @@ export const PhoneMockupVideo: React.FC<PhoneMockupVideoProps> = ({
                 togglePlay();
               }
             }}
-            className="relative w-full h-full bg-black rounded-[38px] overflow-hidden flex items-center justify-center focus:outline-none cursor-pointer group"
+            className="relative w-full h-full bg-black rounded-[30px] sm:rounded-[34px] overflow-hidden flex items-center justify-center focus:outline-none cursor-pointer group"
           >
-            {/* VÍDEO PRINCIPAL PERFEITAMENTE AJUSTADO NO LAYOUT COM CAPA INICIAL */}
+            {/* VÍDEO PRINCIPAL PERFEITAMENTE AJUSTADO 9:16 COM CAPA INICIAL */}
             <video
               ref={videoRef}
               src={videoUrl}
@@ -130,7 +130,7 @@ export const PhoneMockupVideo: React.FC<PhoneMockupVideoProps> = ({
               preload="metadata"
               onTimeUpdate={handleTimeUpdate}
               onEnded={handleVideoEnded}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover aspect-[9/16]"
             />
 
             {/* BOTÃO PLAY NO FORMATO YOUTUBE (QUANDO O VÍDEO NÃO ESTIVER RODANDO) */}

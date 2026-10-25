@@ -3,16 +3,31 @@
 @layer base {
   * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
   html {
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
     color: #000000;
     background-color: #ffffff;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    overflow-x: hidden;
+    width: 100%;
   }
   h1, h2, h3, .font-heading {
     font-family: 'Archivo Black', sans-serif;
     letter-spacing: -0.02em;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  button, a {
+    touch-action: manipulation;
   }
 }
 

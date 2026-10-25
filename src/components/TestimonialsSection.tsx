@@ -213,10 +213,10 @@ export const TestimonialsSection: React.FC = () => {
           type="button"
           onClick={() => handleScroll('left')}
           aria-label="Relato anterior"
-          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FFD400] border-[2.5px] border-black text-black flex items-center justify-center shadow-[3px_3px_0_#000] hover:scale-105 active:scale-90 active:shadow-[1px_1px_0_#000] transition-all cursor-pointer select-none touch-manipulation"
+          className="absolute left-0.5 sm:left-2 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-[#FFD400] border-[2px] sm:border-[2.5px] border-black text-black flex items-center justify-center shadow-[2.5px_2.5px_0_#000] sm:shadow-[3px_3px_0_#000] hover:scale-105 active:scale-90 active:shadow-[1px_1px_0_#000] transition-all cursor-pointer select-none touch-manipulation"
           style={{ touchAction: 'manipulation' }}
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-black" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6 text-black" aria-hidden="true">
             <path d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -226,10 +226,10 @@ export const TestimonialsSection: React.FC = () => {
           type="button"
           onClick={() => handleScroll('right')}
           aria-label="Próximo relato"
-          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FFD400] border-[2.5px] border-black text-black flex items-center justify-center shadow-[3px_3px_0_#000] hover:scale-105 active:scale-90 active:shadow-[1px_1px_0_#000] transition-all cursor-pointer select-none touch-manipulation"
+          className="absolute right-0.5 sm:right-2 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-[#FFD400] border-[2px] sm:border-[2.5px] border-black text-black flex items-center justify-center shadow-[2.5px_2.5px_0_#000] sm:shadow-[3px_3px_0_#000] hover:scale-105 active:scale-90 active:shadow-[1px_1px_0_#000] transition-all cursor-pointer select-none touch-manipulation"
           style={{ touchAction: 'manipulation' }}
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-black" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6 text-black" aria-hidden="true">
             <path d="M9 5l7 7-7 7" />
           </svg>
         </button>
@@ -239,7 +239,7 @@ export const TestimonialsSection: React.FC = () => {
           ref={carouselRef}
           role="region"
           aria-label="Carrossel de imagens de relatos"
-          className="flex gap-4 sm:gap-6 overflow-x-hidden pb-4 pt-2 px-12 sm:px-16 scroll-smooth select-none items-center h-[460px] sm:h-[520px] md:h-[560px]"
+          className="flex gap-3 sm:gap-5 md:gap-6 overflow-x-hidden pb-4 pt-2 px-6 sm:px-12 md:px-16 scroll-smooth select-none items-center h-[400px] sm:h-[480px] md:h-[540px]"
           style={{
             touchAction: 'pan-y',
             scrollbarWidth: 'none',

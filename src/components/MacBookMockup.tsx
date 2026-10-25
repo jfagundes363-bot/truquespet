@@ -6,7 +6,7 @@ export const MacBookMockup: React.FC<MacBookMockupProps> = ({
   imageSrc,
 }) => {
   return (
-    <div className="w-full max-w-[700px] mx-auto select-none px-2 sm:px-4">
+    <div className="w-full max-w-[700px] mx-auto select-none px-2 sm:px-4 overflow-hidden">
       {/* CORPO PRINCIPAL DO MACBOOK (TAMPA / TELA SUPERIOR) */}
       <div className="relative mx-auto rounded-t-[18px] sm:rounded-t-[22px] bg-[#1C1E22] border-[3px] border-[#373B41] p-2 sm:p-2.5 pb-4 sm:pb-5 shadow-[0_15px_35px_rgba(0,0,0,0.35)]">
         {/* CÂMERA FACETIME HD CENTRALIZADA */}

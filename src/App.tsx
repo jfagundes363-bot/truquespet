@@ -18,10 +18,12 @@ import { GuaranteeSection } from './components/GuaranteeSection';
 import { FaqSection } from './components/FaqSection';
 import { FooterSection } from './components/FooterSection';
 import { OfferModal } from './components/OfferModal';
+import { PlanSelectionModal } from './components/PlanSelectionModal';
 
 export default function App() {
   const [config] = useState<ProductConfig>(DEFAULT_CONFIG);
-  const [isOfferModalOpen, setIsOfferModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<'basic' | 'complete' | null>(null);
+  const [isDownsellOpen, setIsDownsellOpen] = useState(false);
 
   // Rolagem suave até a seção de planos
   const handleScrollToPlans = () => {
@@ -31,38 +33,25 @@ export default function App() {
     }
   };
 
-  // Checkout direto Plano Completo (R$ 19,99)
+  // Selecionar Plano Completo: abre o mini card do Plano Completo
   const handleSelectComplete = () => {
-    if (config.linkCompleto1999 && config.linkCompleto1999 !== '#') {
-      window.open(config.linkCompleto1999, '_blank', 'noopener,noreferrer');
-    } else {
-      alert(`Redirecionando para o checkout do Plano Completo (R$ ${config.precoCompleto}).`);
-    }
+    setSelectedPlan('complete');
   };
 
-  // Plano Básico clicado: NÃO vai direto para o checkout, abre o pop-up de oferta
+  // Selecionar Plano Básico: abre o mini card do Plano Básico
   const handleSelectBasic = () => {
-    setIsOfferModalOpen(true);
+    setSelectedPlan('basic');
   };
 
-  // Aceitar desconto no pop-up (R$ 14,90)
-  const handleAcceptDiscount = () => {
-    setIsOfferModalOpen(false);
-    if (config.linkCompleto1490 && config.linkCompleto1490 !== '#') {
-      window.open(config.linkCompleto1490, '_blank', 'noopener,noreferrer');
-    } else {
-      alert(`Redirecionando para o checkout com desconto especial (R$ ${config.precoPopup}).`);
-    }
+  // Fechar o mini card em QUALQUER um dos dois planos -> Abre imediatamente o pop-up de levar tudo por 19,90
+  const handleClosePlanModal = () => {
+    setSelectedPlan(null);
+    setIsDownsellOpen(true);
   };
 
-  // Recusar desconto e seguir para o checkout do Básico (R$ 10,00)
-  const handleDeclineToBasic = () => {
-    setIsOfferModalOpen(false);
-    if (config.linkBasico && config.linkBasico !== '#') {
-      window.open(config.linkBasico, '_blank', 'noopener,noreferrer');
-    } else {
-      alert(`Redirecionando para o checkout do Plano Básico (R$ ${config.precoBasico}).`);
-    }
+  // Fechar o pop-up de 19,90
+  const handleCloseDownsell = () => {
+    setIsDownsellOpen(false);
   };
 
   return (
@@ -116,13 +105,20 @@ export default function App() {
           </main>
         </div>
 
-        {/* POP-UP MODAL DE OFERTA (DOWNSELL R$ 14,90) */}
+        {/* 1. MINI CARD MODAL AO SELECIONAR UM DOS PLANOS */}
+        <PlanSelectionModal
+          isOpen={selectedPlan !== null}
+          planType={selectedPlan}
+          onClose={handleClosePlanModal}
+          linkBasico={config.linkBasico}
+          linkCompleto={config.linkCompleto}
+        />
+
+        {/* 2. POP-UP DE LEVAR TUDO POR 19,90 (AO CLICAR NO 'X' DO MINI CARD DE QUALQUER PLANO) */}
         <OfferModal
-          isOpen={isOfferModalOpen}
-          onClose={() => setIsOfferModalOpen(false)}
+          isOpen={isDownsellOpen}
+          onClose={handleCloseDownsell}
           config={config}
-          onAcceptDiscount={handleAcceptDiscount}
-          onDeclineToBasic={handleDeclineToBasic}
         />
       </div>
     );
