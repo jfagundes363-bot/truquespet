@@ -1,5 +1,5 @@
 import React from 'react';
-import { MacBookMockup } from './MacBookMockup';
+import { PhoneMockup } from './PhoneMockup';
 
 export const VideoPlaceholderSection: React.FC = () => {
   return (
@@ -11,8 +11,11 @@ export const VideoPlaceholderSection: React.FC = () => {
         Conheça a nossa área de membros por dentro: organizada, prática e feita para você aprender no seu ritmo.
       </p>
 
-      {/* MOLDURA DO MACBOOK SLIM COM TELA PRETA (MOLDE LIMPO PARA FUTUROS VÍDEOS/IMAGENS) */}
-      <MacBookMockup />
+      {/* MOLDURA DO CELULAR COM O VÍDEO 9:16 PERFEITAMENTE ALINHADO */}
+      <PhoneMockup
+        videoUrl="https://i.imgur.com/ZlTivfe.mp4"
+        posterUrl="https://i.imgur.com/ZlTivfe.jpg"
+      />
     </section>
   );
 };

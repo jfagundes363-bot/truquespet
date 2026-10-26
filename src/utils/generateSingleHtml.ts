@@ -1204,30 +1204,56 @@ export function generateSingleFileHtml(config: ProductConfig): string {
     </section>
 
     <!-- ========================================================
-         6. DEMONSTRAÇÃO / ÁREA DE MEMBROS (MOLDURA MACBOOK 16:10)
+         6. DEMONSTRAÇÃO / ÁREA DE MEMBROS (MOLDURA CELULAR 9:16)
          ======================================================== -->
     <section id="demonstracao" style="text-align: center;">
       <h2 class="section-title">Veja como é fácil na prática</h2>
       <p class="section-sub">Conheça a nossa área de membros por dentro: organizada, prática e feita para você aprender no seu ritmo.</p>
 
-      <!-- MOLDURA DE MACBOOK SLIM -->
-      <div style="max-width: 700px; margin: 0 auto; padding: 0 12px;">
-        <!-- TAMPA SUPERIOR DO MACBOOK -->
-        <div style="background: #1C1E22; border: 3px solid #373B41; border-top-left-radius: 20px; border-top-right-radius: 20px; padding: 10px 10px 18px 10px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.35);">
-          <!-- CÂMERA FACETIME -->
-          <div style="position: absolute; top: 5px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; border-radius: 50%; background: #050505; border: 1px solid #484D55;"></div>
+      <!-- MOLDURA DO CELULAR (PROPORÇÃO 9:16 COM VÍDEO PERFEITAMENTE ALINHADO) -->
+      <div style="width: 100%; display: flex; justify-content: center; margin: 0 auto; padding: 0 10px;">
+        <div style="position: relative; width: 100%; max-width: clamp(260px, 80vw, 340px); aspect-ratio: 9/16; user-select: none;">
+          <!-- Botões Laterais Físicos -->
+          <div style="position: absolute; left: -3.5px; top: 18%; width: 4px; height: 26px; background: #2c2c2e; border-radius: 2px 0 0 2px;"></div>
+          <div style="position: absolute; left: -3.5px; top: 26%; width: 4px; height: 46px; background: #2c2c2e; border-radius: 2px 0 0 2px;"></div>
+          <div style="position: absolute; left: -3.5px; top: 35%; width: 4px; height: 46px; background: #2c2c2e; border-radius: 2px 0 0 2px;"></div>
+          <div style="position: absolute; right: -3.5px; top: 28%; width: 4px; height: 64px; background: #2c2c2e; border-radius: 0 2px 2px 0;"></div>
 
-          <!-- TELA 16:10 DO MACBOOK (MOLDE LIMPO COM FUNDO PRETO) -->
-          <div style="width: 100%; aspect-ratio: 16/10; background: #000000; border-radius: 10px; overflow: hidden; position: relative; border: 1px solid #272B30;">
-          </div>
-        </div>
+          <!-- Chassi Grafite com Brilho Metálico e Cantos 38px -->
+          <div style="position: relative; width: 100%; height: 100%; background: #1b1b1e; border-radius: 38px; padding: 8px; box-shadow: 0 22px 45px -12px rgba(0,0,0,0.6), 0 10px 20px -8px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.12), 0 0 0 4px #09090b; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
+            <!-- Notch / Ilha Superior Central -->
+            <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 88px; height: 18px; background: #0a0a0c; border-radius: 9999px; z-index: 30; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; pointer-events: none;">
+              <div style="width: 7px; height: 7px; border-radius: 50%; background: #18181b; border: 1px solid #27272a;"></div>
+            </div>
 
-        <!-- BASE INFERIOR DO MACBOOK -->
-        <div style="width: 104%; margin-left: -2%; position: relative;">
-          <div style="height: 16px; background: linear-gradient(to bottom, #373B41, #2A2D33, #1C1E22); border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; border-top: 1px solid #4D535C; box-shadow: 0 12px 24px rgba(0,0,0,0.35); display: flex; justify-content: center;">
-            <div style="width: 64px; height: 5px; background: #141619; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;"></div>
+            <!-- Tela Interna com Vídeo Real 9:16 Perfeitamente Alinhado -->
+            <div id="demo-phone-screen" style="position: relative; width: 100%; height: 100%; background: #000000; border-radius: 30px; overflow: hidden; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+              <video
+                id="demo-main-video"
+                src="https://i.imgur.com/ZlTivfe.mp4"
+                poster="https://i.imgur.com/ZlTivfe.jpg"
+                playsinline
+                preload="metadata"
+                style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 9/16; display: block;"
+              ></video>
+
+              <!-- Botão YouTube Play -->
+              <div id="demo-play-btn" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); z-index: 20;">
+                <button type="button" aria-label="Reproduzir vídeo" style="width: 70px; height: 48px; border-radius: 14px; background: #FF0000; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.6); cursor: pointer;">
+                  <svg style="width: 24px; height: 24px; fill: #ffffff; transform: translateX(2px);" viewBox="0 0 24 24">
+                    <polygon points="6,4 20,12 6,20" fill="#ffffff" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Barra de Progresso do Vídeo -->
+              <div style="position: absolute; bottom: 12px; left: 14px; right: 14px; z-index: 25;">
+                <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.3); border-radius: 9999px; overflow: hidden;">
+                  <div id="demo-progress-fill" style="width: 0%; height: 100%; background: #FF0000; border-radius: 9999px; transition: width 0.1s linear;"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="width: 85%; height: 10px; background: rgba(0,0,0,0.3); filter: blur(6px); margin: -2px auto 0 auto; border-radius: 50%;"></div>
         </div>
       </div>
     </section>
@@ -1977,6 +2003,36 @@ export function generateSingleFileHtml(config: ProductConfig): string {
         toggleVideoPlay();
       }
     });
+
+    // 0.1 VÍDEO DE DEMONSTRAÇÃO (#demonstracao)
+    const demoPhoneScreen = document.getElementById('demo-phone-screen');
+    const demoMainVideo = document.getElementById('demo-main-video');
+    const demoPlayBtn = document.getElementById('demo-play-btn');
+    const demoProgressFill = document.getElementById('demo-progress-fill');
+
+    if (demoPhoneScreen && demoMainVideo) {
+      demoPhoneScreen.addEventListener('click', () => {
+        if (demoMainVideo.paused) {
+          demoMainVideo.play();
+          if (demoPlayBtn) demoPlayBtn.style.display = 'none';
+        } else {
+          demoMainVideo.pause();
+          if (demoPlayBtn) demoPlayBtn.style.display = 'flex';
+        }
+      });
+
+      demoMainVideo.addEventListener('timeupdate', () => {
+        if (demoMainVideo.duration > 0 && demoProgressFill) {
+          const pct = (demoMainVideo.currentTime / demoMainVideo.duration) * 100;
+          demoProgressFill.style.width = pct + '%';
+        }
+      });
+
+      demoMainVideo.addEventListener('ended', () => {
+        if (demoPlayBtn) demoPlayBtn.style.display = 'flex';
+        if (demoProgressFill) demoProgressFill.style.width = '100%';
+      });
+    }
 
     const btnBasico = document.getElementById('btn-comprar-basico');
     const btnCompleto = document.getElementById('btn-comprar-completo');
